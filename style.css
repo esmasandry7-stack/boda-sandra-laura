@@ -1,1 +1,433 @@
+/* ==========================
+   RESET
+========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f7f3ee;
+    overflow-x:hidden;
+}
+
+/* ==========================
+   PORTADA
+========================== */
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        to bottom,
+        #ffd9a8 0%,
+        #f6b27c 28%,
+        #dd886d 52%,
+        #8b5667 78%,
+        #2c2440 100%
+    );
+
+}
+
+/* Brillo del cielo */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at 20% 18%,rgba(255,255,255,.18),transparent 22%),
+
+    radial-gradient(circle at 80% 12%,rgba(255,255,255,.10),transparent 18%),
+
+    radial-gradient(circle at 50% 45%,rgba(255,210,150,.20),transparent 35%);
+
+    animation:cielo 18s ease-in-out infinite alternate;
+
+}
+
+/* Sol */
+
+.sun{
+
+    position:absolute;
+
+    bottom:14%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:240px;
+
+    height:240px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,#fff8cf 0%,#ffd98d 45%,#ffb357 75%,transparent 100%);
+
+    filter:blur(2px);
+
+}
+
+/* Montañas */
+
+.mountains{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    height:240px;
+
+    background:
+
+    radial-gradient(circle at 15% 100%,#4e4255 0 28%,transparent 29%),
+
+    radial-gradient(circle at 40% 100%,#59495d 0 32%,transparent 33%),
+
+    radial-gradient(circle at 63% 100%,#46394e 0 31%,transparent 32%),
+
+    radial-gradient(circle at 90% 100%,#534559 0 30%,transparent 31%),
+
+    linear-gradient(#56485b,#3f3448);
+
+}
+
+/* Oscurecer ligeramente */
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.12);
+
+}
+
+/* Contenido */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(900px,90%);
+
+    color:white;
+
+}
+
+.date{
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    font-size:.9rem;
+
+    margin-bottom:20px;
+
+    opacity:.95;
+
+}
+
+h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(4rem,8vw,6.5rem);
+
+    line-height:1;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+h1 span{
+
+    color:#ffe7b6;
+
+}
+
+.hero h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-weight:400;
+
+    font-style:italic;
+
+    font-size:2rem;
+
+    margin-bottom:55px;
+
+}
+/* ==========================
+   CUENTA ATRÁS
+========================== */
+
+.countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:55px;
+
+}
+
+.time-box{
+
+    width:110px;
+
+    padding:20px 10px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.14);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+}
+
+.time-box span{
+
+    display:block;
+
+    font-size:2.4rem;
+
+    font-weight:600;
+
+}
+
+.time-box p{
+
+    margin-top:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:.8rem;
+
+}
+
+/* ==========================
+   BOTÓN
+========================== */
+
+.btn{
+
+    display:inline-block;
+
+    padding:16px 42px;
+
+    background:#7b2f43;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+    font-weight:500;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    background:#93425a;
+
+}
+
+/* ==========================
+   FLECHA
+========================== */
+
+.arrow{
+
+    margin-top:45px;
+
+    font-size:2rem;
+
+    animation:flecha 2s infinite;
+
+}
+
+@keyframes flecha{
+
+    0%{transform:translateY(0);}
+    50%{transform:translateY(10px);}
+    100%{transform:translateY(0);}
+
+}
+
+@keyframes cielo{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+
+}
+
+/* ==========================
+   HISTORIA
+========================== */
+
+#historia{
+
+    background:#fffdfb;
+
+    color:#444;
+
+    padding:120px 30px;
+
+}
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+#historia h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:#7b2f43;
+
+    font-size:3rem;
+
+    margin-bottom:30px;
+
+}
+
+.intro{
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    max-width:720px;
+
+    margin:auto;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:4rem;
+
+    }
+
+    .hero h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .date{
+
+        letter-spacing:3px;
+
+        font-size:.8rem;
+
+    }
+
+    .time-box{
+
+        width:80px;
+
+        padding:16px 8px;
+
+    }
+
+    .time-box span{
+
+        font-size:2rem;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        max-width:320px;
+
+    }
+
+    .sun{
+
+        width:170px;
+
+        height:170px;
+
+    }
+
+    .mountains{
+
+        height:170px;
+
+    }
+
+}
