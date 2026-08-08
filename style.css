@@ -23,27 +23,14 @@ body{
 ========================== */
 
 .hero{
-
-    position:relative;
-    min-height:85vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    text-align:center;
-
-    background:
-    linear-gradient(
-        180deg,
-        #fde7c9 0%,
-        #f6c792 18%,
-        #e99b78 42%,
-        #b56b6d 68%,
-        #56445c 100%
-    );
+    width:100%;
 }
 
-/* Brillo del cielo */
+.hero img{
+    width:100%;
+    height:auto;
+    display:block;
+}
 
 .hero::before{
 
@@ -65,111 +52,31 @@ body{
 
 }
 
-/* Sol */
-
-.sun{
-
-    position:absolute;
-
-    width:280px;
-    height:280px;
-
-    left:50%;
-    bottom:120px;
-
-    transform:translateX(-50%);
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(circle,
-    #fff9da 0%,
-    #ffe6a5 40%,
-    #ffcb72 65%,
-    rgba(255,190,80,.2) 100%);
-
-    box-shadow:
-    0 0 80px rgba(255,220,140,.7);
-    animation:sol 7s ease-in-out infinite alternate;
-
-}
-
-@keyframes sol{
-
-    from{
-
-        transform:
-        translateX(-50%)
-        translateY(0px);
-
-    }
-
-    to{
-
-        transform:
-        translateX(-50%)
-        translateY(12px);
-
-    }
-}
-
-/* Montañas */
-
-.mountains{
-
-    position:absolute;
-
-    bottom:0;
-
-    width:100%;
-
-    height:260px;
-
-    background:
-
-    radial-gradient(circle at 8% 100%, #53465a 0 30%, transparent 31%),
-    radial-gradient(circle at 28% 100%, #4b4054 0 34%, transparent 35%),
-    radial-gradient(circle at 48% 100%, #5f5165 0 28%, transparent 29%),
-    radial-gradient(circle at 67% 100%, #4b3f55 0 33%, transparent 34%),
-    radial-gradient(circle at 90% 100%, #5a4a60 0 29%, transparent 30%),
-
-    linear-gradient(
-    #5b4c60,
-    #3c3346);
-}
-
-/* Oscurecer ligeramente */
-
-.overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:rgba(0,0,0,.12);
-
-}
-
-/* Contenido */
-
 .hero-content{
 
     position:relative;
     z-index:5;
 
     width:90%;
-    max-width:700px;
+    max-width:900px;
 
     margin:auto;
-
-    padding-top:70px;
-    padding-bottom:40px;
 
     color:white;
 
     display:flex;
     flex-direction:column;
     align-items:center;
+    justify-content:flex-start;
+
+    padding-top:140px;
+    padding-left:20px;
+    padding-right:20px;
+
+    height:100%;
+
+    text-align:center;
+    padding:0 20px;
 
 }
 
@@ -191,21 +98,23 @@ h1{
 
     font-family:'Cinzel',serif;
 
-    font-size:clamp(3.6rem,7vw,5.8rem);
+    font-size:clamp(4.5rem,9vw,7rem);
 
-    line-height:1.05;
+    font-weight:500;
 
-    margin-bottom:18px;
+    letter-spacing:4px;
 
-    font-weight:600;
+    line-height:1.15;
 
-    letter-spacing:2px;
+    white-space:nowrap;
 
-    text-shadow:0 4px 20px rgba(0,0,0,.25);
+    margin:20px 0;
+
+    text-shadow:0 5px 20px rgba(0,0,0,.35);
 
 }
 
-h1 span{
+ span{
 
     color:#ffe7b6;
 
@@ -215,13 +124,19 @@ h1 span{
 
     font-family:'Cormorant Garamond',serif;
 
-    font-weight:400;
+    font-size:2.4rem;
+
+    max-width:700px;
+    
+    line-height:1.3;
 
     font-style:italic;
 
-    font-size:2rem;
+    font-weight:400;
 
-    margin-bottom:55px;
+    margin-bottom:0;
+
+    color:rgba(255,255,255,.95);
 
 }
 /* ==========================
@@ -244,27 +159,32 @@ h1 span{
 
 .time-box{
 
-    width:100px;
+    width:120px;
 
-    padding:18px 10px;
+    padding:22px 12px;
 
-    border-radius:20px;
+    border-radius:24px;
 
-    background:rgba(255,255,255,.20);
+    background:rgba(255,255,255,.16);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:blur(20px);
 
     border:1px solid rgba(255,255,255,.28);
 
-    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.25);
 
-    transition:.3s;
+    transition:.35s;
 
 }
 
 .time-box:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.22);
 
 }
 
@@ -272,15 +192,17 @@ h1 span{
 
     display:block;
 
-    font-size:3rem;
+    font-size:3.3rem;
 
     font-weight:700;
 
     line-height:1;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Cormorant Garamond',serif;
+
+    color:white;
 
 }
 
@@ -293,62 +215,6 @@ h1 span{
     letter-spacing:2px;
 
     font-size:.8rem;
-
-}
-
-/* ==========================
-   BOTÓN
-========================== */
-
-.btn{
-
-    display:inline-block;
-
-    padding:16px 42px;
-
-    background:#7b2f43;
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:50px;
-
-    transition:.35s;
-
-    font-weight:500;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
-
-}
-
-.btn:hover{
-
-    transform:translateY(-4px);
-
-    background:#93425a;
-
-}
-
-/* ==========================
-   FLECHA
-========================== */
-
-.arrow{
-
-    margin-top:45px;
-
-    font-size:2rem;
-
-    animation:flecha 2s infinite;
-
-}
-
-@keyframes flecha{
-
-    0%{transform:translateY(0);}
-    50%{transform:translateY(10px);}
-    100%{transform:translateY(0);}
 
 }
 
@@ -370,11 +236,16 @@ h1 span{
 
 #historia{
 
-    background:#fffdfb;
+    background:
+    linear-gradient(
+        180deg,
+        #fffdfb 0%,
+        #f9f4ee 100%
+    );
 
-    color:#444;
+    padding:140px 30px;
 
-    padding:120px 30px;
+    position:relative;
 
 }
 
@@ -392,11 +263,13 @@ h1 span{
 
     font-family:'Cormorant Garamond',serif;
 
+    font-size:4rem;
+
+    font-weight:600;
+
     color:#7b2f43;
 
-    font-size:3rem;
-
-    margin-bottom:30px;
+    margin-bottom:20px;
 
 }
 
@@ -432,11 +305,17 @@ h1 span{
 
     .date{
 
-        letter-spacing:3px;
+    letter-spacing:8px;
 
-        font-size:.8rem;
+    text-transform:uppercase;
 
-    }
+    font-size:.9rem;
+
+    color:rgba(255,255,255,.92);
+
+   margin-bottom:35px;
+
+}
 
     .time-box{
 
@@ -526,37 +405,74 @@ section p{
 
 .libro{
 
-    max-width:760px;
+    max-width:820px;
 
-    margin:60px auto 0;
+    margin:70px auto 0;
 
-    background:white;
+    background:linear-gradient(
+    180deg,
+    #fffdfa,
+    #fff8f2
+);
 
-    padding:60px;
+    padding:75px;
 
-    border-radius:20px;
+    border-radius:28px;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    box-shadow:
+        0 35px 70px rgba(0,0,0,.12),
+        inset 0 1px 0 rgba(255,255,255,.8);
+
+    position:relative;
+
+    overflow:hidden;
 
 }
 
 .libro p{
 
+    font-family:'Manrope', sans-serif;
+
+    font-size:1.08rem;
+
     line-height:2;
+
+    color:#4b4b4b;
 
     margin-bottom:28px;
 
-    font-size:1.15rem;
+    text-align:left;
+
+}
+
+.frase,
+blockquote,
+.final,
+.inicio-historia{
+
+    text-align:center;
 
 }
 
 .frase{
 
-    font-size:1.5rem !important;
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2.35rem;
 
     font-style:italic;
 
+    font-weight:600;
+
     color:#7b2f43;
+
+    text-align:center;
+
+    line-height:1.45;
+
+    margin:65px auto;
+
+    max-width:650px;
 
 }
 
@@ -576,13 +492,17 @@ blockquote{
 
 .final{
 
-    margin-top:45px;
+    font-family:'Cormorant Garamond', serif;
 
-    font-size:1.4rem !important;
-
-    font-weight:600;
+    font-size:2.4rem;
 
     color:#7b2f43;
+
+    text-align:center;
+
+    margin-top:70px;
+
+    font-weight:600;
 
 }
 
@@ -693,5 +613,862 @@ blockquote{
     color:#7b2f43;
 
     font-family:'Cormorant Garamond',serif;
+
+}
+
+.wave-divider{
+
+    position:absolute;
+
+    bottom:-2px;
+
+    left:0;
+
+    width:100%;
+
+    line-height:0;
+
+}
+
+.wave-divider svg{
+
+    display:block;
+
+    width:100%;
+
+    height:120px;
+
+}
+
+.pretitle{
+
+    display:block;
+
+    font-family:'Manrope',sans-serif;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    letter-spacing:12px;
+
+    text-transform:uppercase;
+
+    color:#ffffff;
+
+    opacity:1;
+
+    margin-bottom:22px;
+
+}
+
+/* ==========================================
+   NUESTRA HISTORIA
+========================================== */
+
+#historia{
+
+    background:#fffdf9;
+
+    padding:120px 20px;
+
+}
+
+.section-title{
+
+    font-family:'Cinzel',serif;
+
+    font-size:3rem;
+
+    text-align:center;
+
+    color:#6c4450;
+
+    margin-bottom:15px;
+
+}
+
+.section-divider{
+
+    text-align:center;
+
+    font-size:2rem;
+
+    color:#b78964;
+
+    margin-bottom:60px;
+
+    letter-spacing:8px;
+
+}
+
+.libro p{
+
+    font-size:1.15rem;
+
+    line-height:2.1;
+
+    margin-bottom:28px;
+
+    color:#555;
+
+}
+
+.dropcap::first-letter{
+
+    float:left;
+
+    font-family:'Cinzel', serif;
+
+    font-size:5.5rem;
+
+    line-height:0.8;
+
+    color:#8b5a63;
+
+    margin-right:12px;
+
+    margin-top:8px;
+
+    padding:0;
+
+}
+
+.dropcap{
+
+    text-align:left;
+
+    overflow:hidden;
+
+}
+
+blockquote{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2.1rem;
+
+    text-align:center;
+
+    font-style:italic;
+
+    color:#8b5a63;
+
+    margin:50px 0;
+
+}
+
+.inicio-historia{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:1.7rem;
+
+    font-weight:600;
+
+    font-style:normal;
+
+    color:#5d3b46;
+
+    text-align:center;
+
+    line-height:1.7;
+
+    margin:45px 0;
+
+}
+
+/*==========================================
+        CUENTA ATRÁS
+==========================================*/
+
+#countdown-section{
+
+    padding:140px 30px;
+
+    background:#fffdfb;
+
+    text-align:center;
+
+}
+
+#countdown-section h2{
+
+    font-family:'Cinzel',serif;
+
+    font-size:3rem;
+
+    color:#6c4450;
+
+    margin-bottom:20px;
+
+}
+
+#countdown-section .countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:55px;
+
+    margin:70px 0 45px;
+
+    flex-wrap:wrap;
+
+}
+
+#countdown-section .time-box{
+
+    background:none;
+
+    box-shadow:none;
+
+    padding:0;
+
+}
+
+#countdown-section .time-box span{
+
+    display:block;
+
+    font-family:'Cinzel',serif;
+
+    font-size:4rem;
+
+    color:#7b2f43;
+
+    font-weight:600;
+
+}
+
+#countdown-section .time-box p{
+
+    margin-top:10px;
+
+    font-family:'Manrope',sans-serif;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-size:.85rem;
+
+    color:#888;
+
+}
+
+.fecha-boda{
+
+    margin-top:40px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.8rem;
+
+    color:#6c4450;
+
+}
+
+/*==========================================
+            NUESTRO GRAN DÍA
+==========================================*/
+
+#gran-dia{
+
+    background:#fffdfb;
+
+    padding:30px 30px 110px;
+
+}
+
+.timeline{
+
+    max-width:650px;
+
+    margin:10px auto 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.timeline-item{
+
+    text-align:center;
+
+}
+
+.timeline-icon{
+
+    color:#7b2f43;
+
+    margin-bottom:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.timeline-icon{
+    width:76px;
+    height:76px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 24px;
+
+    color:#7b2f43;
+}
+
+.timeline-icon svg{
+    width:76px;
+    height:76px;
+
+    display:block;
+}
+
+.timeline-icon svg *{
+    vector-effect:non-scaling-stroke;
+}
+
+.timeline h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2.2rem;
+
+    color:#6c4450;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+
+}
+
+.hora{
+
+    font-family:'Cinzel',serif;
+
+    font-size:1.8rem;
+
+    color:#7b2f43;
+
+    letter-spacing:2px;
+
+    margin-bottom:12px;
+
+}
+
+.timeline-item p{
+
+    font-family:'Manrope',sans-serif;
+
+    font-size:1rem;
+
+    color:#8a8a8a;
+
+}
+
+.timeline-line{
+
+    width:1px;
+
+    height:65px;
+
+    background:#d8c5ca;
+
+    margin:18px 0;
+
+}
+
+/* GALERÍA */
+
+#galeria {
+    background: #fffdfb;
+    padding: 110px 30px;
+}
+
+.galeria-intro {
+    max-width: 600px;
+    margin: 0 auto 55px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: #6c4450;
+}
+
+.galeria-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.galeria-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.galeria-grande {
+    grid-row: span 2;
+    aspect-ratio: auto;
+}
+
+.foto-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3ebe7;
+    border: 1px solid rgba(123, 47, 67, 0.12);
+}
+
+.foto-placeholder span {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9a777f;
+}
+
+@media (max-width: 600px) {
+
+    #galeria {
+        padding: 90px 20px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .foto-placeholder {
+        min-height: 160px;
+    }
+
+}
+
+/* ================================
+   FORMULARIO DE CONFIRMACIÓN
+   ================================ */
+
+#confirmacion {
+    background: #fffdfb;
+    padding: 100px 30px;
+}
+
+#confirmacion .container {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.confirmacion-intro {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #6c4450;
+}
+
+/* FORMULARIO */
+
+.formulario-boda {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* CADA CAMPO */
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+/* ETIQUETAS */
+
+.form-group > label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    color: #6c4450;
+}
+
+/* INPUTS, SELECT Y TEXTAREA */
+
+.formulario-boda input[type="text"],
+.formulario-boda select,
+.formulario-boda textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    border: 1px solid #d8c8c0;
+    border-radius: 2px;
+
+    background: #fffdfb;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+
+    color: #4f3a42;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* FOCUS */
+
+.formulario-boda input[type="text"]:focus,
+.formulario-boda select:focus,
+.formulario-boda textarea:focus {
+    border-color: #7b2f43;
+
+    box-shadow:
+        0 0 0 2px rgba(123, 47, 67, 0.08);
+}
+
+/* TEXTAREA */
+
+.formulario-boda textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* PLACEHOLDER */
+
+.formulario-boda input::placeholder,
+.formulario-boda textarea::placeholder {
+    color: #b7a5a0;
+}
+
+/* ================================
+   OPCIONES / RADIO BUTTONS
+   ================================ */
+
+.opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Cada opción como pequeña tarjeta */
+
+.opcion {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 16px;
+
+    border: 1px solid #ddcec8;
+    border-radius: 2px;
+
+    background: #fffdfb;
+
+    cursor: pointer;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    color: #4f2934;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+/* RADIO */
+
+.opcion input[type="radio"] {
+    appearance: none;
+
+    width: 15px;
+    height: 15px;
+
+    margin: 0;
+
+    border: 1px solid #a98a91;
+    border-radius: 50%;
+
+    background: #fffdfb;
+
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+/* RADIO SELECCIONADO */
+
+.opcion input[type="radio"]:checked {
+    border-color: #7b2f43;
+}
+
+/* PUNTO INTERIOR */
+
+.opcion input[type="radio"]:checked::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    top: 3px;
+    left: 3px;
+
+    border-radius: 50%;
+
+    background: #7b2f43;
+}
+
+/* OPCIÓN SELECCIONADA */
+
+.opcion:has(input[type="radio"]:checked) {
+    border-color: #7b2f43;
+    background: #7b2f43;
+    color: #fffdfb;
+}
+
+/* HOVER */
+
+.opcion:hover {
+    border-color: #b78964;
+}
+
+/* ================================
+   BOTÓN
+   ================================ */
+
+.formulario-boda .btn {
+    display: block;
+
+    margin: 45px auto 0;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: 'Manrope', sans-serif;
+}
+
+/* ================================
+   MÓVIL
+   ================================ */
+
+@media (max-width: 600px) {
+
+    #confirmacion {
+        padding: 80px 20px;
+    }
+
+    .formulario-boda {
+        width: 100%;
+    }
+
+    .opciones {
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    .opcion {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+/* =================================
+   CONTRASTE OPCIONES FORMULARIO
+   ================================= */
+
+#confirmacion .opcion {
+    color: #4a2631 !important;
+    background: #fffdfb;
+    border-color: #cdb8b0;
+}
+
+#confirmacion .opcion span {
+    color: #4a2631 !important;
+    font-weight: 500;
+}
+
+/* Círculo sin seleccionar */
+#confirmacion .opcion input[type="radio"] {
+    border-color: #7b2f43;
+}
+
+/* Opción seleccionada */
+#confirmacion .opcion:has(input[type="radio"]:checked) {
+    background: #7b2f43;
+    border-color: #7b2f43;
+}
+
+#confirmacion .opcion:has(input[type="radio"]:checked) span {
+    color: #fffdfb !important;
+}
+
+/* Círculo seleccionado */
+#confirmacion .opcion input[type="radio"]:checked {
+    border-color: #fffdfb;
+}
+
+/* =================================
+   BOTÓN CONFIRMAR ASISTENCIA
+   ================================= */
+
+.formulario-boda .btn {
+    display: block;
+    margin: 45px auto 0;
+
+    padding: 14px 32px;
+
+    border: 1px solid #7b2f43;
+    border-radius: 2px;
+
+    background: #7b2f43;
+    color: #fffdfb;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.formulario-boda .btn:hover {
+    background: #fffdfb;
+    color: #7b2f43;
+    transform: translateY(-2px);
+}
+
+/* ================================
+   BOTÓN CÓMO LLEGAR
+   ================================ */
+
+.lugar-card .btn {
+    display: inline-block;
+
+    padding: 11px 26px;
+
+    border: 1px solid #7b2f43;
+    border-radius: 2px;
+
+    background: transparent;
+    color: #7b2f43;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.lugar-card .btn:hover {
+    background: #7b2f43;
+    color: #fffdfb;
+    transform: translateY(-2px);
+}
+
+/* ================================
+   BOTÓN DE MÚSICA
+   ================================ */
+
+.boton-musica {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 17px;
+
+    border: 1px solid #7b2f43;
+    border-radius: 2px;
+
+    background: rgba(255, 253, 251, 0.94);
+    color: #7b2f43;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 16px rgba(60, 30, 30, 0.08);
+
+    transition: all 0.25s ease;
+}
+
+.boton-musica:hover {
+    background: #7b2f43;
+    color: #fffdfb;
+    transform: translateY(-2px);
+}
+
+.icono-musica {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.texto-musica {
+    white-space: nowrap;
+}
+
+.boton-musica.reproduciendo {
+    background: #7b2f43;
+    color: #fffdfb;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    .boton-musica {
+        right: 16px;
+        bottom: 16px;
+
+        padding: 10px 13px;
+
+        font-size: 0.65rem;
+        letter-spacing: 1.2px;
+    }
 
 }
