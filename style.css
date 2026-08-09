@@ -1410,52 +1410,50 @@ blockquote{
     bottom: 24px;
     z-index: 1000;
 
+    width: 46px;
+    height: 46px;
+
     display: flex;
     align-items: center;
-    gap: 9px;
+    justify-content: center;
 
-    padding: 11px 17px;
+    border: 2px solid #7b2f43;
+    border-radius: 50%;
 
-    border: 1px solid #7b2f43;
-    border-radius: 2px;
-
-    background: rgba(255, 253, 251, 0.94);
-    color: #7b2f43;
-
+   background: #f1d9dd !important;
+   color: #7b2f43 !important;
+   
     font-family: 'Manrope', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 500;
-
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
 
     cursor: pointer;
 
-    box-shadow: 0 4px 16px rgba(60, 30, 30, 0.08);
+    box-shadow: 0 4px 16px rgba(60, 30, 30, 0.20);
 
     transition: all 0.25s ease;
 }
 
+.boton-musica .icono-musica {
+    display: block;
+    color: #7b2f43;
+    opacity: 1;
+    visibility: visible;
+    font-size: 1.25rem;
+    line-height: 1;
+    font-weight: 600;
+}
+
 .boton-musica:hover {
-    background: #7b2f43;
-    color: #fffdfb;
+    background: #f1d9dd !important;
+    color: #7b2f43 !important;
     transform: translateY(-2px);
 }
 
-.icono-musica {
-    font-size: 1rem;
-    line-height: 1;
-}
-
-.texto-musica {
-    white-space: nowrap;
-}
-
 .boton-musica.reproduciendo {
-    background: #7b2f43;
-    color: #fffdfb;
+    background: #f1d9dd !important;
+    color: #7b2f43 !important;
 }
-
 
 /* MÓVIL */
 
@@ -1465,10 +1463,10 @@ blockquote{
         right: 16px;
         bottom: 16px;
 
-        padding: 10px 13px;
+        width: 44px;
+        height: 44px;
 
-        font-size: 0.65rem;
-        letter-spacing: 1.2px;
+        font-size: 1.1rem;
     }
 
 }

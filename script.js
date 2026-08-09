@@ -135,30 +135,41 @@ if (formulario) {
 // Sandra & Laura
 // =====================================
 
-const botonMusica = document.getElementById("boton-musica");
-const musicaBoda = document.getElementById("musica-boda");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (botonMusica && musicaBoda) {
+    const botonMusica = document.getElementById("boton-musica");
+    const musicaBoda = document.getElementById("musica-boda");
 
-    botonMusica.addEventListener("click", function () {
+    if (!botonMusica || !musicaBoda) {
+        return;
+    }
+
+    botonMusica.addEventListener("click", async function () {
 
         if (musicaBoda.paused) {
 
-            musicaBoda.play();
+            try {
 
-            botonMusica.classList.add("reproduciendo");
+                await musicaBoda.play();
 
-            botonMusica.querySelector(".icono-musica").textContent = "Ⅱ";
-            botonMusica.querySelector(".texto-musica").textContent = "Pausar música";
+                botonMusica.classList.add("reproduciendo");
+                botonMusica.querySelector(".icono-musica").textContent = "Ⅱ";
+                botonMusica.setAttribute("aria-label", "Pausar música");
+
+            } catch (error) {
+
+                console.error("No se pudo reproducir la música:", error);
+
+            }
 
         } else {
 
             musicaBoda.pause();
 
             botonMusica.classList.remove("reproduciendo");
-
             botonMusica.querySelector(".icono-musica").textContent = "♪";
-            botonMusica.querySelector(".texto-musica").textContent = "Nuestra canción";
+            botonMusica.setAttribute("aria-label", "Reproducir música");
+
         }
 
     });
@@ -166,10 +177,9 @@ if (botonMusica && musicaBoda) {
     musicaBoda.addEventListener("ended", function () {
 
         botonMusica.classList.remove("reproduciendo");
-
         botonMusica.querySelector(".icono-musica").textContent = "♪";
-        botonMusica.querySelector(".texto-musica").textContent = "Nuestra canción";
+        botonMusica.setAttribute("aria-label", "Reproducir música");
 
     });
 
-}
+});
